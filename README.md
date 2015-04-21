@@ -15,41 +15,29 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Bootstrap is a foundational Puppet module. It gets an Ubuntu-based Linux server
+up, running and ready for other Puppet manifests.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+This module basically installs some essential software and sets up a couple of
+files and folders we're going to use.
 
 ## Setup
 
 ### What bootstrap affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* Packages installed: `aptitude`, `build-essential`, `dkms`, `fail2ban`, `gdebi-core`, `ntp`, `software-properties-common`, `vim`
+* Add `puppet` group and give said group access to `/etc/puppet`.
+* Sync Apt cache.
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+You'll need to install [Puppet](//puppetlabs.com) in order to run this manifest.
 
 ### Beginning with bootstrap
 
-The very basic steps needed for a user to get the module up and running.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+Put the module in `/etc/puppet/modules`.
 
 ## Usage
 
@@ -58,22 +46,22 @@ the fancy stuff with your module here.
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+Class `bootstrap` includes just a few things:
+
+* Packages installed: `aptitude`, `build-essential`, `dkms`, `fail2ban`, `gdebi-core`, `ntp`, `software-properties-common`, `vim`
+* Add `puppet` group and give said group access to `/etc/puppet`.
+* Sync Apt cache.
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+This module has only been tested on Ubuntu-based systems. It should work with
+any Debian-based Linux, but at the moment, it does not support other distros
+(e.g., RHEL, CentOS, Arch, etc).
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+If you'd like to contribute, send a pull request on [Github](https://github.com/bitsandbooks/puppet-bootstrap).
 
-## Release Notes/Contributors/Etc **Optional**
+## Contributors
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+* [Rob D.](https://github.com/bitsandbooks)
