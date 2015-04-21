@@ -1,0 +1,14 @@
+{
+  "name": "robd-bootstrap",
+  "version": "0.1.0",
+  "author": "robd",
+  "summary": "It preps a system for further Puppetization.",
+  "license": "GPL 3.0",
+  "source": "https://github.com/bitsandbooks/puppetstack",
+  "project_page": "https://github.com/bitsandbooks/puppetstack",
+  "issues_url": "https://github.com/bitsandbooks/puppetstack/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
